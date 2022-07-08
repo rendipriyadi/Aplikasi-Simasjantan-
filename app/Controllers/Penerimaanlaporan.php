@@ -136,13 +136,13 @@ class Penerimaanlaporan extends BaseController
                         'required' => '{field} tidak boleh kosong'
                     ]
                 ],
-                'file' => [
-                    'label' => 'File',
-                    'rules' => 'ext_in[file,png,jpeg,jpg,mp4]',
-                    'errors' => [
-                        'ext_in' => 'Ekstensi File Tidak diketahui',
-                    ]
-                ]
+                // 'file' => [
+                //     'label' => 'File',
+                //     'rules' => 'ext_in[file,png,jpeg,jpg,mp4]',
+                //     'errors' => [
+                //         'ext_in' => 'Ekstensi File Tidak diketahui',
+                //     ]
+                // ]
             ]);
 
             if (!$valid) {
@@ -152,7 +152,7 @@ class Penerimaanlaporan extends BaseController
                         'errorInformasi' => $validation->getError('informasi'),
                         'errorGangguan' => $validation->getError('gangguan'),
                         'errorNama' => $validation->getError('nama'),
-                        'errorFile' => $validation->getError('file')
+                        // 'errorFile' => $validation->getError('file')
                     ]
                 ];
             } else {

@@ -1,7 +1,7 @@
 <?= $this->extend("template/main") ?>
 
 <?= $this->section("title") ?>
-<title>SIMAJANTAN</title>
+<title>SIMASJANTAN</title>
 <?= $this->endSection() ?>
 
 <?= $this->section("judul") ?>
@@ -9,10 +9,10 @@ DATA LAPORAN KEJADIAN
 <?= $this->endSection() ?>
 
 <?= $this->section("menu") ?>
-    <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Laporan</a></li>
-        <li class="breadcrumb-item active">Kejadian</li>
-    </ol>
+<ol class="breadcrumb float-sm-right">
+    <li class="breadcrumb-item"><a href="#">Laporan</a></li>
+    <li class="breadcrumb-item active">Kejadian</li>
+</ol>
 <?= $this->endSection() ?>
 
 <?= $this->section('detail') ?>
@@ -30,7 +30,7 @@ DATA LAPORAN KEJADIAN
             <div class="card-header">Pilih Periode</div>
             <div class="card-body bg-white">
                 <p class="card-text">
-                    <form action="<?= site_url('laporan/laporanKejadian') ?>" method="POST" >
+                <form action="<?= site_url('laporan/laporanKejadian') ?>" method="POST">
                     <div class="form-group">
                         <label for="">Tanggal Awal</label>
                         <input type="date" name="tglawal" class="form-control" required>
@@ -44,7 +44,7 @@ DATA LAPORAN KEJADIAN
                             <i class="fas fa-file-excel"></i> Cetak Excel
                         </button>
                     </div>
-                    </form>
+                </form>
                 </p>
             </div>
         </div>

@@ -10,6 +10,8 @@ Dashboard Simasjantan
 
 <?= $this->section("menu") ?>
 <ol class="breadcrumb float-sm-right">
+    <a href="<?= site_url('penerimaanlaporan/index') ?>" class="btn btn-sm btn-info mr-3"><i class="nav-icon fas fa-book"></i> Penerimaan Laporan</a>
+    <a href="<?= site_url('kejadian/index') ?>" class="btn btn-sm btn-info mr-3"> <i class="nav-icon fas fa-tasks"></i> Kejadian</a>
     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
     <li class="breadcrumb-item active"></li>
 </ol>
@@ -74,7 +76,7 @@ Dashboard Simasjantan
                     </div>
                 </div>
                 <div class="card col-lg-4 col-12">
-                    <div class="card-header" style="font-weight: bold; font-size:15px;"><i class="fa fa-user mr-1"></i>Data Korban Kecelakaan Per Tahun</div>
+                    <div class="card-header" style="font-weight: bold; font-size:15px;"><i class="fa fa-user mr-1"></i>Data Korban Kecelakaan Tahun Ini</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-4 col-4">
@@ -117,7 +119,7 @@ Dashboard Simasjantan
                     </div>
                 </div>
                 <div class="card col-lg-4 col-12">
-                    <div class="card-header" style="font-weight: bold; font-size:15px;"><i class="fas fa-tasks mr-1"></i>Tipe Kejadian Per Tahun</div>
+                    <div class="card-header" style="font-weight: bold; font-size:15px;"><i class="fas fa-tasks mr-1"></i>Tipe Kejadian Tahun Ini</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-6 col-6">
@@ -209,7 +211,7 @@ Dashboard Simasjantan
                     </div>
                 </div>
                 <div class="card col-lg-8 col-12">
-                    <div class="card-header" style="font-weight: bold; font-size:15px;"><i class="fas fa-info-circle mr-1"></i>Data Sumber Inforasi Per Tahun</div>
+                    <div class="card-header" style="font-weight: bold; font-size:15px;"><i class="fas fa-info-circle mr-1"></i>Data Sumber Informasi Tahun Ini</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-3 col-6">

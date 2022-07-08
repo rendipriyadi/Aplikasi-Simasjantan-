@@ -1,7 +1,7 @@
 <?= $this->extend("template/main") ?>
 
 <?= $this->section("title") ?>
-<title>SIMAJANTAN</title>
+<title>SIMASJANTAN</title>
 <?= $this->endSection() ?>
 
 <?= $this->section("judul") ?>
@@ -9,10 +9,10 @@ DATA LAPORAN TERKAIT KEJADIAN
 <?= $this->endSection() ?>
 
 <?= $this->section("menu") ?>
-    <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Laporan</a></li>
-        <li class="breadcrumb-item active">Laporan Terkait</li>
-    </ol>
+<ol class="breadcrumb float-sm-right">
+    <li class="breadcrumb-item"><a href="#">Laporan</a></li>
+    <li class="breadcrumb-item active">Laporan Terkait</li>
+</ol>
 <?= $this->endSection() ?>
 
 <?= $this->section('detail') ?>
@@ -31,20 +31,20 @@ DATA LAPORAN TERKAIT KEJADIAN
             <div class="card-body bg-white">
                 <p class="card-text">
                     <?= form_open('laporan/laporanTerkaitKejadian') ?>
-                    <div class="form-group">
-                        <label for="">Tanggal Awal</label>
-                        <input type="date" name="tglawal" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Tanggal Akhir</label>
-                        <input type="date" name="tglakhir" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-block btn-success">
-                            <i class="fas fa-file-excel"></i> Cetak Excel
-                        </button>
-                    </div>
-                    <?= form_close() ?>
+                <div class="form-group">
+                    <label for="">Tanggal Awal</label>
+                    <input type="date" name="tglawal" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="">Tanggal Akhir</label>
+                    <input type="date" name="tglakhir" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block btn-success">
+                        <i class="fas fa-file-excel"></i> Cetak Excel
+                    </button>
+                </div>
+                <?= form_close() ?>
                 </p>
             </div>
         </div>

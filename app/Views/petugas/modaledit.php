@@ -33,6 +33,7 @@
               <option value="SENKOM" <?php if ($jabatan == 'SENKOM') echo "selected"; ?>>SENKOM</option>
               <option value="PATROLI" <?php if ($jabatan == 'PATROLI') echo "selected"; ?>>PATROLI</option>
               <option value="DEREK" <?php if ($jabatan == 'DEREK') echo "selected"; ?>>DEREK</option>
+              <option value="LAIN - LAIN" <?php if ($jabatan == 'LAIN - LAIN') echo "selected"; ?>>LAIN - LAIN</option>
             </select>
           </div>
         </div>

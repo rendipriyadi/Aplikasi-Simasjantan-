@@ -41,7 +41,7 @@
                 <div class="form-group row">
                     <label for="" class="col-sm-4 col-form-label">Golongan Mobil :</label>
                     <div class="col-sm-8">
-                        <select name="golongan" id="golongan" class="form-control" style="font-size: 13px;">
+                        <select name="golongan" id="golongan" class="form-control" style="font-size: 13px;" required>
                             <option value="GOLONGAN 1" <?php if ($golongan == 'GOLONGAN 1') echo "selected"; ?>>GOLONGAN 1</option>
                             <option value="GOLONGAN 2" <?php if ($golongan == 'GOLONGAN 2') echo "selected"; ?>>GOLONGAN 2</option>
                             <option value="GOLONGAN 3" <?php if ($golongan == 'GOLONGAN 3') echo "selected"; ?>>GOLONGAN 3</option>

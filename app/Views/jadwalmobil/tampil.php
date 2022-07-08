@@ -1,7 +1,7 @@
 <?= $this->extend('template/main') ?>
 
 <?= $this->section('title') ?>
-<title>SIMAJANTAN</title>
+<title>SIMASJANTAN</title>
 <?= $this->endSection() ?>
 
 <?= $this->section('judul') ?>

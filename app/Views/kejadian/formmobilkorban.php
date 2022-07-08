@@ -41,7 +41,7 @@
                 <div class="form-group row">
                     <label for="" class="col-sm-4 col-form-label">Golongan Mobil :</label>
                     <div class="col-sm-8">
-                        <select name="golongan" id="golongan" class="form-control" style="font-size: 13px;">
+                        <select name="golongan" id="golongan" class="form-control" style="font-size: 13px;" required>
                             <option value="">Pilih Golongan Mobil</option>
                             <option value="GOLONGAN 1">GOLONGAN 1</option>
                             <option value="GOLONGAN 2">GOLONGAN 2</option>

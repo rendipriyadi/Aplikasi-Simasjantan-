@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modaledittindakan" tabindex="-1" aria-labelledby="modaledittindakanLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="modaledittindakan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

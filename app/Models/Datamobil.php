@@ -21,6 +21,6 @@ class Datamobil extends Model
         $this->session = \Config\Services::session();
         $pt = $this->session->get('kode_pt');
 
-        return $this->table('master_mobil')->Where(['status_mobil' => 'aktif', 'kode_pt' => $pt])->get()->getResultArray();
+        return $this->table('master_mobil')->Where(['status_mobil' => 'aktif', 'kode_pt' => $pt])->orderBy('nama_mobil', 'ASC')->get()->getResultArray();
     }
 }

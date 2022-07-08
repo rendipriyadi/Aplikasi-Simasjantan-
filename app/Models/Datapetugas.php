@@ -21,7 +21,7 @@ class Datapetugas extends Model
         $this->session = \Config\Services::session();
         $pt = $this->session->get('kode_pt');
 
-        return $this->table('master_petugas')->Where(['status_pt' => 'aktif', 'kode_pt' => $pt])->get()->getResultArray();
+        return $this->table('master_petugas')->Where(['status_pt' => 'aktif', 'kode_pt' => $pt])->orderBy('nama_pt', 'ASC')->get()->getResultArray();
     }
 
     public function tampilData()
@@ -29,7 +29,7 @@ class Datapetugas extends Model
         $this->session = \Config\Services::session();
         $pt = $this->session->get('kode_pt');
 
-        return $this->table('master_petugas')->Where(['status_pt' => 'aktif', 'jabatan_pt' => 'SENKOM', 'kode_pt' => $pt])->get()->getResultArray();
+        return $this->table('master_petugas')->Where(['status_pt' => 'aktif', 'jabatan_pt' => 'SENKOM', 'kode_pt' => $pt])->orderBy('nama_pt', 'ASC')->get()->getResultArray();
     }
 
     public function tampilPetugas()
@@ -37,6 +37,6 @@ class Datapetugas extends Model
         $this->session = \Config\Services::session();
         $pt = $this->session->get('kode_pt');
 
-        return $this->table('master_petugas')->Where(['status_pt' => 'aktif', 'jabatan_pt !=' => 'SENKOM', 'kode_pt' => $pt])->get()->getResultArray();
+        return $this->table('master_petugas')->Where(['status_pt' => 'aktif', 'jabatan_pt !=' => 'SENKOM', 'kode_pt' => $pt])->orderBy('nama_pt', 'ASC')->get()->getResultArray();
     }
 }

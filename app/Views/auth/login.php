@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login | SIMAJANTAN</title>
+    <title>Login | SIMASJANTAN</title>
 
     <!-- Icon -->
     <link rel="icon" href="<?= base_url() ?>/img/cmnp.png">

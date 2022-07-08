@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modaleditmobilpetugas" aria-labelledby="modaleditmobilpetugasLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+<div class="modal fade" id="modaleditmobilpetugas" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
