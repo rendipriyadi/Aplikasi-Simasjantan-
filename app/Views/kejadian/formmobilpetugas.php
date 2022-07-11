@@ -18,7 +18,7 @@
                         <select name="mobil" id="mobil" class="form-control" style="font-size: 13px;">
                             <option value="">Pilih Mobil</option>
                             <?php foreach ($datamobil->getResultArray() as $row) : ?>
-                                <option value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> - (<?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?>)</option>
+                                <option value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> || <?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?> || <?= $row['shift_mobil'] ?></option>
                             <?php endforeach; ?>
                         </select>
                         <div class="invalid-feedback errorMobil" style="display: none;"></div>
