@@ -8,7 +8,7 @@ class Datamobilkorban extends Model
 {
     protected $table            = 'mobil_korban';
     protected $primaryKey       = 'id_mobil_korban';
-    protected $allowedFields    = ['id_mobil_korban', 'kejadian_id', 'jenis_mobil_korban', 'golongan_mobil', 'merk_mobil_korban', 'nopol_mobil_korban', 'mobil_derek', 'warna_mobil', 'kondisi_kendaraan', 'catatan', 'foto', 'kode_pt', 'created_by', 'updated_by'];
+    protected $allowedFields    = ['id_mobil_korban', 'kejadian_id', 'nama', 'jenis_kelamin', 'jenis_mobil_korban', 'golongan_mobil', 'merk_mobil_korban', 'nopol_mobil_korban', 'mobil_derek', 'kondisi_kendaraan', 'catatan', 'foto', 'kode_pt', 'created_by', 'updated_by'];
 
     protected $useSoftDeletes = true;
     protected $useTimestamps = true;

@@ -200,7 +200,7 @@ DATA KEJADIAN
                         <nav class="nav nav-pills">
                             <div class="nav nav-tabs" id="nav-tab">
                                 <a class="nav-item nav-link active" id="nav-detail-tab" data-toggle="tab" href="#detail" role="tab">Detail Kejadian</a>
-                                <a class="nav-item nav-link" id="nav-kecelkorban-tab" data-toggle="tab" href="#korban" role="tab">Korban</a>
+                                <a class="nav-item nav-link" id="nav-kecelkorban-tab" data-toggle="tab" href="#korban" role="tab">Korban Kecelakaan</a>
                                 <a class="nav-item nav-link" id="nav-mobilkorban-tab" data-toggle="tab" href="#mobilkorban" role="tab">Mobil Terlibat</a>
                                 <a class="nav-item nav-link" id="nav-korban-tab" data-toggle="tab" href="#mobilpetugas" role="tab">Mobil Petugas</a>
                                 <a class="nav-item nav-link" id="nav-korban-tab" data-toggle="tab" href="#tindakan" role="tab">Tindakan</a>
@@ -287,7 +287,7 @@ DATA KEJADIAN
                                 <div class="form-row">
                                     <div class="card col-sm-12">
                                         <div class="card-body">
-                                            <button type="button" class="btn btn-info" id="tombolKorban"><i class="fa fa-plus-circle"> Korban</i></button>
+                                            <button type="button" class="btn btn-info" id="tombolKorban"><i class="fa fa-plus-circle"> Korban Kecelakaan</i></button>
                                         </div>
                                     </div>
                                 </div>

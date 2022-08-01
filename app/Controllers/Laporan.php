@@ -486,13 +486,15 @@ class Laporan extends BaseController
 
         $sheet->setCellValue('A3', 'No');
         $sheet->setCellValue('B3', 'NO Kejadian');
-        $sheet->setCellValue('C3', 'Jenis Mobil');
-        $sheet->setCellValue('D3', 'Golongan Mobil');
-        $sheet->setCellValue('E3', 'Merk Mobil');
-        $sheet->setCellValue('F3', 'Nopol Mobil');
-        $sheet->setCellValue('G3', 'Mobil Derek');
-        $sheet->setCellValue('H3', 'Warna Mobil');
-        $sheet->setCellValue('I3', 'Kondisi Mobil');
+        $sheet->setCellValue('C3', 'Nama Pengemudi');
+        $sheet->setCellValue('D3', 'Jenis Kelamin');
+        $sheet->setCellValue('E3', 'Jenis Mobil');
+        $sheet->setCellValue('F3', 'Golongan Mobil');
+        $sheet->setCellValue('G3', 'Merk Mobil');
+        $sheet->setCellValue('H3', 'Nopol Mobil');
+        $sheet->setCellValue('I3', 'Mobil Derek');
+        $sheet->setCellValue('J3', 'Warna Mobil');
+        $sheet->setCellValue('K3', 'Kondisi Mobil');
 
         $sheet->getStyle('A3')->applyFromArray($styleColumn);
         $sheet->getStyle('B3')->applyFromArray($styleColumn);
@@ -503,6 +505,8 @@ class Laporan extends BaseController
         $sheet->getStyle('G3')->applyFromArray($styleColumn);
         $sheet->getStyle('H3')->applyFromArray($styleColumn);
         $sheet->getStyle('I3')->applyFromArray($styleColumn);
+        $sheet->getStyle('J3')->applyFromArray($styleColumn);
+        $sheet->getStyle('K3')->applyFromArray($styleColumn);
 
         $sheet->getStyle('A3')->applyFromArray($borderArray);
         $sheet->getStyle('B3')->applyFromArray($borderArray);
@@ -513,6 +517,8 @@ class Laporan extends BaseController
         $sheet->getStyle('G3')->applyFromArray($borderArray);
         $sheet->getStyle('H3')->applyFromArray($borderArray);
         $sheet->getStyle('I3')->applyFromArray($borderArray);
+        $sheet->getStyle('J3')->applyFromArray($borderArray);
+        $sheet->getStyle('K3')->applyFromArray($borderArray);
 
         $no = 1;
         $numRow = 4;
@@ -521,13 +527,15 @@ class Laporan extends BaseController
 
             $sheet->setCellValue('A' . $numRow, $no);
             $sheet->setCellValue('B' . $numRow, $row['kejadian_id']);
-            $sheet->setCellValue('C' . $numRow, $row['jenis_mobil_korban']);
-            $sheet->setCellValue('D' . $numRow, $row['golongan_mobil']);
-            $sheet->setCellValue('E' . $numRow, $row['merk_mobil_korban']);
-            $sheet->setCellValue('F' . $numRow, $row['nopol_mobil_korban']);
-            $sheet->setCellValue('G' . $numRow, $row['mobil_derek']);
-            $sheet->setCellValue('H' . $numRow, $row['warna_mobil']);
-            $sheet->setCellValue('I' . $numRow, $row['kondisi_kendaraan']);
+            $sheet->setCellValue('C' . $numRow, $row['nama']);
+            $sheet->setCellValue('D' . $numRow, $row['jenis_kelamin']);
+            $sheet->setCellValue('E' . $numRow, $row['jenis_mobil_korban']);
+            $sheet->setCellValue('F' . $numRow, $row['golongan_mobil']);
+            $sheet->setCellValue('G' . $numRow, $row['merk_mobil_korban']);
+            $sheet->setCellValue('H' . $numRow, $row['nopol_mobil_korban']);
+            $sheet->setCellValue('I' . $numRow, $row['mobil_derek']);
+            $sheet->setCellValue('J' . $numRow, $row['warna_mobil']);
+            $sheet->setCellValue('K' . $numRow, $row['kondisi_kendaraan']);
 
 
             $sheet->getStyle('A' . $numRow)->applyFromArray($styleColumn);
@@ -541,6 +549,8 @@ class Laporan extends BaseController
             $sheet->getStyle('G' . $numRow)->applyFromArray($borderArray);
             $sheet->getStyle('H' . $numRow)->applyFromArray($borderArray);
             $sheet->getStyle('I' . $numRow)->applyFromArray($borderArray);
+            $sheet->getStyle('J' . $numRow)->applyFromArray($borderArray);
+            $sheet->getStyle('K' . $numRow)->applyFromArray($borderArray);
 
             $no++;
             $numRow++;

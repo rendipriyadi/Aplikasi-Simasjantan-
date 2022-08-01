@@ -14,6 +14,24 @@
                 <input type="hidden" class="form-control" id="idmobilkorban" name="idmobilkorban" value="<?= $idmobilkorban ?>">
                 <input type="hidden" class="form-control" id="idkejadian" name="idkejadian" value="<?= $idkejadian ?>">
                 <div class="form-group row">
+                    <label for="kode" class="col-sm-4 col-form-label">Nama Pengemudi :</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="nama" id="nama" class="form-control" value="<?= $nama ?>">
+                        <div class="invalid-feedback errorNama" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nama" class="col-sm-4 col-form-label">Jenis Kelamin</label>
+                    <div class="col-sm-4 form-check">
+                        <input type="radio" class="form-check-input" id="jenkel" name="jenkel" value="laki-laki" <?php if ($jenkel == 'laki-laki') echo "checked"; ?>>
+                        <label class="form-check-label" for="jenkel">Laki - Laki</label>
+                    </div>
+                    <div class="col-sm-4 form-check">
+                        <input type="radio" class="form-check-input" id="jenkel" name="jenkel" value="perempuan" <?php if ($jenkel == 'perempuan') echo "checked"; ?>>
+                        <label class="form-check-label" for="jenkel">Perempuan</label>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="kode" class="col-sm-4 col-form-label">No Polisi :</label>
                     <div class="col-sm-8">
                         <input type="text" name="nopol" id="nopol" class="form-control" value="<?= $nopol ?>">
@@ -26,14 +44,17 @@
                         <select name="mobil" id="mobil" class="form-control" style="font-size: 13px;">
                             <option value="BOX" <?php if ($jenismobil == 'BOX') echo "selected"; ?>>BOX</option>
                             <option value="BUS" <?php if ($jenismobil == 'BUS') echo "selected"; ?>>BUS</option>
+                            <option value="CRANE" <?php if ($jenismobil == 'CRANE') echo "selected"; ?>>CRANE</option>
                             <option value="JIP" <?php if ($jenismobil == 'JIP') echo "selected"; ?>>JIP</option>
                             <option value="MINIBUS" <?php if ($jenismobil == 'MINIBUS') echo "selected"; ?>>MINIBUS</option>
+                            <option value="MOTOR" <?php if ($jenismobil == 'MOTOR') echo "selected"; ?>>MOTOR</option>
                             <option value="PICKUP" <?php if ($jenismobil == 'PICKUP') echo "selected"; ?>>PICKUP</option>
                             <option value="SEDAN" <?php if ($jenismobil == 'SEDAN') echo "selected"; ?>>SEDAN</option>
                             <option value="TRUK" <?php if ($jenismobil == 'TRUK') echo "selected"; ?>>TRUK</option>
                             <option value="TRUK GANDENG" <?php if ($jenismobil == 'TRUK GANDENG') echo "selected"; ?>>TRUK GANDENG</option>
-                            <option value="TRUK TANGKI" <?php if ($jenismobil == 'TRUK TANGKI') echo "selected"; ?>>TRUK GANDENG</option>
+                            <option value="TRUK TANGKI" <?php if ($jenismobil == 'TRUK TANGKI') echo "selected"; ?>>TRUK TANGKI</option>
                             <option value="TRAILER" <?php if ($jenismobil == 'TRAILER') echo "selected"; ?>>TRAILER</option>
+                            <option value="WINGBOX" <?php if ($jenismobil == 'WINGBOX') echo "selected"; ?>>WINGBOX</option>
                             <option value="LAIN-LAIN" <?php if ($jenismobil == 'LAIN-LAIN') echo "selected"; ?>>LAIN-LAIN</option>
                         </select>
                     </div>
@@ -54,12 +75,6 @@
                     <label for="kode" class="col-sm-4 col-form-label">Merek :</label>
                     <div class="col-sm-8">
                         <input type="text" name="merek" id="merek" class="form-control" value="<?= $merk ?>">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="" class="col-sm-4 col-form-label">Warna Mobil :</label>
-                    <div class="col-sm-8">
-                        <input type="text" name="warna" id="warna" class="form-control" value="<?= $warna ?>">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -153,6 +168,30 @@ $(document).ready(function () {
                         $('.errorNopol').fadeOut();
                         $('#nopol').removeClass('is-invalid');
                         $('#nopol').addClass('is-valid');
+                    }
+                    if (response.error.errorNama) {
+                        $('.errorNama').html(response.error.errorNama).show();
+                        $('#nama').addClass('is-invalid');
+                    }else{
+                        $('.errorNama').fadeOut();
+                        $('#nama').removeClass('is-invalid');
+                        $('#nama').addClass('is-valid');
+                    }
+                    if (response.error.errorJenkel) {
+                        $('.errorJenkel').html(response.error.errorJenkel).show();
+                        $('#jenkel').addClass('is-invalid');
+                    }else{
+                        $('.errorJenkel').fadeOut();
+                        $('#jenkel').removeClass('is-invalid');
+                        $('#jenkel').addClass('is-valid');
+                    }
+                    if (response.error.errorGolongan) {
+                        $('.errorGolongan').html(response.error.errorGolongan).show();
+                        $('#golongan').addClass('is-invalid');
+                    }else{
+                        $('.errorGolongan').fadeOut();
+                        $('#golongan').removeClass('is-invalid');
+                        $('#golongan').addClass('is-valid');
                     }
                     if (response.error.errorFoto) {
                         $('.errorFoto').html(response.error.errorFoto).show();

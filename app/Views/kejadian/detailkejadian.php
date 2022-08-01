@@ -198,7 +198,7 @@ DATA KEJADIAN
                         <nav class="nav nav-pills">
                             <div class="nav nav-tabs" id="nav-tab">
                                 <a class="nav-item nav-link active" id="nav-detail-tab" data-toggle="tab" href="#detail" role="tab">Detail Kejadian</a>
-                                <a class="nav-item nav-link" id="nav-kecelkorban-tab" data-toggle="tab" href="#korban" role="tab">Korban</a>
+                                <a class="nav-item nav-link" id="nav-kecelkorban-tab" data-toggle="tab" href="#korban" role="tab">Korban Kecelakaan</a>
                                 <a class="nav-item nav-link" id="nav-mobilkorban-tab" data-toggle="tab" href="#mobilkorban" role="tab">Mobil Terlibat</a>
                                 <a class="nav-item nav-link" id="nav-mobilpetugas-tab" data-toggle="tab" href="#mobilpetugas" role="tab">Mobil Petugas</a>
                                 <a class="nav-item nav-link" id="nav-tindakan-tab" data-toggle="tab" href="#tindakan" role="tab">Tindakan</a>

@@ -21,7 +21,7 @@
                                 <?php if ($row['id_pakai_mobil'] == $mobil) : ?>
                                     <option selected value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> || <?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?> || <?= $row['shift_mobil'] ?></option>
                                 <?php else : ?>
-                                    <option value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> - (<?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?>)</option>
+                                    <option value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> || <?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?> || <?= $row['shift_mobil'] ?></option>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
@@ -41,7 +41,7 @@
                     <div class="col-sm-4">
                         <?php foreach ($datamobil->getResultArray() as $row) : ?>
                             <?php if ($row['id_pakai_mobil'] == $petugas2) : ?>
-                                <input type="text" class="form-control" id="petugas1" name="petugas1" value="<?= $row['nama_pt2'] ?>" readonly>
+                                <input type="text" class="form-control" id="petugas2" name="petugas2" value="<?= $row['nama_pt2'] ?>" readonly>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="col-sm-4">
                         <?php foreach ($datamobil->getResultArray() as $row) : ?>
                             <?php if ($row['id_pakai_mobil'] == $petugas3) : ?>
-                                <input type="text" class="form-control" id="petugas1" name="petugas1" value="<?= $row['nama_pt3'] ?>" readonly>
+                                <input type="text" class="form-control" id="petugas3" name="petugas3" value="<?= $row['nama_pt3'] ?>" readonly>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="col-sm-4">
                         <?php foreach ($datamobil->getResultArray() as $row) : ?>
                             <?php if ($row['id_pakai_mobil'] == $petugas4) : ?>
-                                <input type="text" class="form-control" id="petugas1" name="petugas1" value="<?= $row['nama_pt4'] ?>" readonly>
+                                <input type="text" class="form-control" id="petugas4" name="petugas4" value="<?= $row['nama_pt4'] ?>" readonly>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     </div>

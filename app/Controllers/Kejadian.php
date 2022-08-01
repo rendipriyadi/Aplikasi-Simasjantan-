@@ -276,7 +276,7 @@ class Kejadian extends BaseController
                 $row[] = $no;
                 $row[] = $tombolPilih;
                 $row[] = $list->no_laporan;
-                $row[] = date('d-m-Y', strtotime($list->tgl_laporan));
+                $row[] = date('d-m-Y H:i', strtotime($list->tgl_laporan));
                 $row[] = $list->nama_pelapor;
                 $row[] = $list->kategori_laporan;
                 $row[] = $list->kontak_pelapor;
@@ -967,11 +967,12 @@ class Kejadian extends BaseController
     {
         if ($this->request->isAJAX()) {
             $idkejadian = $this->request->getPost('idkejadian');
+            $nama = $this->request->getPost('nama');
+            $jenkel = $this->request->getPost('jenkel');
             $mobil = $this->request->getVar('mobil');
             $golongan = $this->request->getVar('golongan');
             $merek = $this->request->getVar('merek');
             $nopol = $this->request->getVar('nopol');
-            $warna = $this->request->getVar('warna');
             $derek = $this->request->getVar('derek');
             $kondisi = $this->request->getVar('kondisi');
             $catatan = $this->request->getVar('catatan');
@@ -984,6 +985,27 @@ class Kejadian extends BaseController
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'No Polisi tidak boleh kosong'
+                    ]
+                ],
+                'nama' => [
+                    'label' => 'Nama Pengemudi',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong'
+                    ]
+                ],
+                'jenkel' => [
+                    'label' => 'Jenis Kelamin',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong'
+                    ]
+                ],
+                'golongan' => [
+                    'label' => 'Golongan Mobil',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong'
                     ]
                 ],
                 'foto' => [
@@ -1000,6 +1022,9 @@ class Kejadian extends BaseController
                 $msg = [
                     'error' => [
                         'errorNopol' => $validation->getError('nopol'),
+                        'errorNama' => $validation->getError('nama'),
+                        'errorJenkel' => $validation->getError('jenkel'),
+                        'errorGolongan' => $validation->getError('golongan'),
                         'errorFoto' => $validation->getError('foto')
                     ]
                 ];
@@ -1019,12 +1044,13 @@ class Kejadian extends BaseController
 
                 $data = [
                     'kejadian_id' => $idkejadian,
+                    'nama' => $nama,
+                    'jenis_kelamin' => $jenkel,
                     'jenis_mobil_korban' => $mobil,
                     'golongan_mobil' => $golongan,
                     'merk_mobil_korban' => $merek,
                     'nopol_mobil_korban' => $nopol,
                     'mobil_derek' => $derek,
-                    'warna_mobil' => $warna,
                     'kondisi_kendaraan' => $kondisi,
                     'catatan' => $catatan,
                     'foto' => $pathFile,
@@ -1053,13 +1079,14 @@ class Kejadian extends BaseController
             $row = $this->mobilkorban->find($id);
             $data = [
                 'idmobilkorban' => $row['id_mobil_korban'],
+                'nama' => $row['nama'],
+                'jenkel' => $row['jenis_kelamin'],
                 'idkejadian' => $row['kejadian_id'],
                 'jenismobil' => $row['jenis_mobil_korban'],
                 'golongan' => $row['golongan_mobil'],
                 'merk' => $row['merk_mobil_korban'],
                 'nopol' => $row['nopol_mobil_korban'],
                 'derek' => $row['mobil_derek'],
-                'warna' => $row['warna_mobil'],
                 'kondisi' => $row['kondisi_kendaraan'],
                 'catatan' => $row['catatan'],
                 'foto' => $row['foto']
@@ -1078,11 +1105,12 @@ class Kejadian extends BaseController
         if ($this->request->isAJAX()) {
             $idmobilkorban = $this->request->getPost('idmobilkorban');
             $idkejadian = $this->request->getPost('idkejadian');
+            $nama = $this->request->getPost('nama');
+            $jenkel = $this->request->getPost('jenkel');
             $mobil = $this->request->getVar('mobil');
             $golongan = $this->request->getVar('golongan');
             $merek = $this->request->getVar('merek');
             $nopol = $this->request->getVar('nopol');
-            $warna = $this->request->getVar('warna');
             $derek = $this->request->getVar('derek');
             $kondisi = $this->request->getVar('kondisi');
             $catatan = $this->request->getVar('catatan');
@@ -1095,6 +1123,27 @@ class Kejadian extends BaseController
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'No Polisi tidak boleh kosong'
+                    ]
+                ],
+                'nama' => [
+                    'label' => 'Nama Pengemudi',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong'
+                    ]
+                ],
+                'jenkel' => [
+                    'label' => 'Jenis Kelamin',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong'
+                    ]
+                ],
+                'golongan' => [
+                    'label' => 'Golongan Mobil',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong'
                     ]
                 ],
                 'foto' => [
@@ -1111,6 +1160,9 @@ class Kejadian extends BaseController
                 $msg = [
                     'error' => [
                         'errorNopol' => $validation->getError('nopol'),
+                        'errorNama' => $validation->getError('nama'),
+                        'errorJenkel' => $validation->getError('jenkel'),
+                        'errorGolongan' => $validation->getError('golongan'),
                         'errorFoto' => $validation->getError('foto')
                     ]
                 ];
@@ -1133,12 +1185,13 @@ class Kejadian extends BaseController
 
                 $data = [
                     'kejadian_id' => $idkejadian,
+                    'nama' => $nama,
+                    'jenis_kelamin' => $jenkel,
                     'jenis_mobil_korban' => $mobil,
                     'golongan_mobil' => $golongan,
                     'merk_mobil_korban' => $merek,
                     'nopol_mobil_korban' => $nopol,
                     'mobil_derek' => $derek,
-                    'warna_mobil' => $warna,
                     'kondisi_kendaraan' => $kondisi,
                     'catatan' => $catatan,
                     'foto' => $pathFile,

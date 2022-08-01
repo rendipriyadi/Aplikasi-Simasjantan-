@@ -40,7 +40,6 @@ DATA PETUGAS
                         <th>No Handphone</th>
                         <th>Email</th>
                         <th>Status</th>
-                        <th>Foto</th>
                         <th width="80px">Aksi</th>
                     </tr>
                 </thead>
@@ -63,7 +62,6 @@ DATA PETUGAS
                             <span class="badge badge-danger" style="font-size:12px;">tidak aktif</span></td>
                         <?php } ?>
                         </td>
-                        <td style="vertical-align: middle;"><img src="<?= base_url() ?>/<?= $row['foto']; ?>" alt="Foto Petugas" width="100px" onclick="window.open('<?= base_url() ?>/<?= $row['foto']; ?>')"></td>
                         <td>
                             <button type="button" class="btn btn-outline-success btn-sm" onclick="edit('<?= $row['id_pt'] ?>')">
                                 <i class="fa fa-edit"></i>

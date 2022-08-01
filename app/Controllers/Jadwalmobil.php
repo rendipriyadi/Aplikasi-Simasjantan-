@@ -77,6 +77,7 @@ class Jadwalmobil extends BaseController
             $petugas2 = $this->request->getPost('petugas2');
             $petugas3 = $this->request->getPost('petugas3');
             $petugas4 = $this->request->getPost('petugas4');
+            $shift = $this->request->getPost('shift');
             $odoawal = $this->request->getPost('odoawal');
             $odoakhir = $this->request->getPost('odoakhir');
 
@@ -85,6 +86,13 @@ class Jadwalmobil extends BaseController
             $valid = $this->validate([
                 'mobil' => [
                     'label' => 'Mobil',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong',
+                    ]
+                ],
+                'shift' => [
+                    'label' => 'Shift',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} tidak boleh kosong',
@@ -103,29 +111,11 @@ class Jadwalmobil extends BaseController
                 $msg = [
                     'error' => [
                         'errorMobil' => $validation->getError('mobil'),
-                        'errorPetugas1' => $validation->getError('petugas1')
+                        'errorPetugas1' => $validation->getError('petugas1'),
+                        'errorShift' => $validation->getError('shift'),
                     ]
                 ];
             } else {
-                // $cekMobil = $this->jadwalmobil->where(['mobil_id' => $mobil, 'tgl_pakai_mobil' => date('Y-m-d')])->first();
-                // $updateData = $this->jadwalmobil->where(['mobil_id' => $mobil])->first();
-
-                // if ($cekMobil != null) {
-                //     $data = [
-                //         'tgl_pakai_mobil' => $tglpakai,
-                //         'mobil_id' => $mobil,
-                //         'id_pt1' => $petugas1,
-                //         'id_pt2' => $petugas2,
-                //         'id_pt3' => $petugas3,
-                //         'id_pt4' => $petugas4,
-                //         'shift_mobil' => $this->session->get('shift'),
-                //         'odo_awal' => $odoawal,
-                //         'odo_akhir' => $odoakhir,
-                //         'created_by' => $this->session->get('user_id'),
-                //         'updated_by' => $this->session->get('user_id')
-                //     ];
-                //     $this->jadwalmobil->insert($data) && $this->jadwalmobil->update($updateData, ['odo_akhir' => $odoawal]);
-                // } else {
                 $data = [
                     'tgl_pakai_mobil' => $tglpakai,
                     'mobil_id' => $mobil,
@@ -133,7 +123,7 @@ class Jadwalmobil extends BaseController
                     'id_pt2' => $petugas2,
                     'id_pt3' => $petugas3,
                     'id_pt4' => $petugas4,
-                    'shift_mobil' => $this->session->get('shift'),
+                    'shift_mobil' => $shift,
                     'odo_awal' => $odoawal,
                     'odo_akhir' => $odoakhir,
                     'kode_pt' => $this->session->get('kode_pt'),
@@ -184,6 +174,7 @@ class Jadwalmobil extends BaseController
                 'id_pt3' => $row['id_pt3'],
                 'id_pt4' => $row['id_pt4'],
                 'datapetugas' => $this->datapetugas->tampilPetugas(),
+                'shift' => $row['shift_mobil'],
                 'odoawal' => $row['odo_awal'],
                 'odoakhir' => $row['odo_akhir']
             ];
@@ -206,6 +197,7 @@ class Jadwalmobil extends BaseController
             $petugas2 = $this->request->getPost('petugas2');
             $petugas3 = $this->request->getPost('petugas3');
             $petugas4 = $this->request->getPost('petugas4');
+            $shift = $this->request->getPost('shift');
             $odoawal = $this->request->getPost('odoawal');
             $odoakhir = $this->request->getPost('odoakhir');
 
@@ -214,6 +206,13 @@ class Jadwalmobil extends BaseController
             $valid = $this->validate([
                 'mobil' => [
                     'label' => 'Mobil',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} tidak boleh kosong',
+                    ]
+                ],
+                'shift' => [
+                    'label' => 'Shift',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} tidak boleh kosong',
@@ -232,7 +231,8 @@ class Jadwalmobil extends BaseController
                 $msg = [
                     'error' => [
                         'errorMobil' => $validation->getError('mobil'),
-                        'errorPetugas1' => $validation->getError('petugas1')
+                        'errorPetugas1' => $validation->getError('petugas1'),
+                        'errorShift' => $validation->getError('shift'),
                     ]
                 ];
             } else {
@@ -243,7 +243,7 @@ class Jadwalmobil extends BaseController
                     'id_pt2' => $petugas2,
                     'id_pt3' => $petugas3,
                     'id_pt4' => $petugas4,
-                    'shift_mobil' => $this->session->get('shift'),
+                    'shift_mobil' => $shift,
                     'odo_awal' => $odoawal,
                     'odo_akhir' => $odoakhir,
                     'kode_pt' => $this->session->get('kode_pt'),

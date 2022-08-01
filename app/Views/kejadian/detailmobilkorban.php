@@ -4,10 +4,11 @@
             <tr>
                 <th>No</th>
                 <th>No Laporan</th>
+                <th>Nama Pengemudi</th>
+                <th>Jenis Kelamin</th>
                 <th>Jenis Mobil</th>
                 <th>Golongan Mobil</th>
                 <th>Merk</th>
-                <th>Warna Mobil</th>
                 <th>Kondisi Kendaraan</th>
                 <th>Catatan</th>
                 <th>Foto</th>
@@ -21,10 +22,11 @@
                 <tr>
                     <td style="vertical-align: middle;"><?= $no++; ?></td>
                     <td style="vertical-align: middle;"><?= $row['no_laporan']; ?></td>
+                    <td style="vertical-align: middle;"><?= $row['nama']; ?></td>
+                    <td style="vertical-align: middle;"><?= $row['jenis_kelamin']; ?></td>
                     <td style="vertical-align: middle;"><?= $row['jenis_mobil_korban']; ?></td>
                     <td style="vertical-align: middle;"><?= $row['golongan_mobil']; ?></td>
                     <td style="vertical-align: middle;"><?= $row['merk_mobil_korban']; ?></td>
-                    <td style="vertical-align: middle;"><?= $row['warna_mobil']; ?></td>
                     <td style="vertical-align: middle;"><?= $row['kondisi_kendaraan']; ?></td>
                     <td style="vertical-align: middle;"><?= $row['catatan']; ?></td>
                     <td style="vertical-align: middle;">
@@ -44,7 +46,6 @@
         </tbody>
     </table>
 </div>
-<div class="viewmodal" style="display: none;"></div>
 
 <script>
     function hapus(id) {
@@ -93,7 +94,7 @@
             },
             dataType: "json",
             success: function(response) {
-                $('.viewmodal').html(response.data).show();
+                $('.datamodal').html(response.data).show();
                 $('#modaleditmobilkorban').modal('show');
             },
             error: function(xhr, ajaxOptions, thrownError) {

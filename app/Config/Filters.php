@@ -81,7 +81,8 @@ class Filters extends BaseConfig
                 'except' => [
                     'login', 'login/*',
                     'layout', 'layout/*',
-                    'kejadian', 'kejadian/*'
+                    'kejadian', 'kejadian/*',
+                    'laporan', 'laporan/*',
                 ]
             ],
             'toolbar',

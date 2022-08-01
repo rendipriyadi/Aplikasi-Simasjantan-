@@ -67,14 +67,6 @@ class Petugas extends BaseController
                         'required' => '{field} tidak boleh kosong'
                     ]
                 ],
-                'foto' => [
-                    'label' => 'Foto',
-                    'rules' => 'mime_in[foto,image/png,image/jpeg,image/jpg]|ext_in[foto,png,jpeg,jpg]|is_image[foto]',
-                    'errors' => [
-                        'mime_in' => 'Yang anda upload bukan gambar',
-                        'ext_in' => 'Yang anda upload bukan gambar',
-                    ]
-                ]
             ]);
 
             if (!$valid) {
@@ -82,22 +74,9 @@ class Petugas extends BaseController
                     'error' => [
                         'errorNip' => $validation->getError('nip'),
                         'errorNama' => $validation->getError('nama'),
-                        'errorFoto' => $validation->getError('foto')
                     ]
                 ];
             } else {
-                $fileUpload = $_FILES['foto']['name'];
-
-                if ($fileUpload != null) {
-                    $namaFile = $nama;
-                    $fileGambar = $this->request->getFile('foto');
-                    $fileGambar->move('file/petugas', $namaFile . '.' . $fileGambar->getExtension());
-
-                    $pathFile = 'file/petugas/' . $fileGambar->getName();
-                } else {
-                    $pathFile = '';
-                }
-
                 $data = [
                     'nip_pt' => $nip,
                     'nama_pt' => $nama,
@@ -111,7 +90,6 @@ class Petugas extends BaseController
                     'alamat_pt' => $alamat,
                     'kota_pt' => $kota,
                     'kodepos_pt' => $kodepos,
-                    'foto' => $pathFile,
                     'created_by' => $this->session->get('user_id'),
                     'updated_by' => $this->session->get('user_id')
                 ];
@@ -160,7 +138,6 @@ class Petugas extends BaseController
                 'alamat' => $row['alamat_pt'],
                 'kota' => $row['kota_pt'],
                 'kodepos' => $row['kodepos_pt'],
-                'foto' => $row['foto']
             ];
 
             $msg = [
@@ -204,14 +181,6 @@ class Petugas extends BaseController
                         'required' => '{field} tidak boleh kosong'
                     ]
                 ],
-                'foto' => [
-                    'label' => 'Foto',
-                    'rules' => 'mime_in[foto,image/png,image/jpeg,image/jpg]|ext_in[foto,png,jpeg,jpg]|is_image[foto]',
-                    'errors' => [
-                        'mime_in' => 'Yang anda upload bukan gambar',
-                        'ext_in' => 'Yang anda upload bukan gambar',
-                    ]
-                ]
             ]);
 
             if (!$valid) {
@@ -219,27 +188,9 @@ class Petugas extends BaseController
                     'error' => [
                         'errorNip' => $validation->getError('nip'),
                         'errorNama' => $validation->getError('nama'),
-                        'errorFoto' => $validation->getError('foto')
                     ]
                 ];
             } else {
-                $fileUpload = $_FILES['foto']['name'];
-
-                $rowData = $this->datapetugas->find($id);
-                $fileLama =  $rowData['foto'];
-
-                if ($fileUpload != null) {
-                    ($fileLama == '' || $fileLama == null) ? '' : unlink($fileLama);
-
-                    $namaFile = $nama;
-                    $fileGambar = $this->request->getFile('foto');
-                    $fileGambar->move('file/petugas', $namaFile . '.' . $fileGambar->getExtension());
-
-                    $pathFile = 'file/petugas/' . $fileGambar->getName();
-                } else {
-                    $pathFile = $fileLama;
-                }
-
                 $data = [
                     'nip_pt' => $nip,
                     'nama_pt' => $nama,
@@ -253,7 +204,6 @@ class Petugas extends BaseController
                     'alamat_pt' => $alamat,
                     'kota_pt' => $kota,
                     'kodepos_pt' => $kodepos,
-                    'foto' => $pathFile,
                     'updated_by' => $this->session->get('user_id')
                 ];
                 $this->datapetugas->update($id, $data);

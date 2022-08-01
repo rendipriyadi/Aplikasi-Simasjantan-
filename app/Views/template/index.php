@@ -284,7 +284,7 @@ Dashboard Simasjantan
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered table-sm table-striped" width="100%">
+                <table id="tabeldashboard" class="table table-bordered table-sm table-striped" width="100%">
                     <thead align="center">
                         <tr>
                             <th>No</th>
@@ -360,5 +360,9 @@ Dashboard Simasjantan
     setTimeout(function() {
         location.reload();
     }, 300000);
+
+    $(document).ready(function() {
+        $('#tabeldashboard').DataTable();
+    });
 </script>
 <?= $this->endSection() ?>

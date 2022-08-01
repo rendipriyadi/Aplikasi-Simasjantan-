@@ -90,13 +90,6 @@
             <input type="text" class="form-control" id="kodepos" name="kodepos" placeholder="Isi Kode Pos Anda">
           </div>
         </div>
-        <div class="form-group row">
-          <label for="icon" class="col-sm-4 col-form-label">Upload Foto (<i>Jika Ada</i>) :</label>
-          <div class="col-sm-8">
-            <input type="file" class="form-control" id="foto" name="foto" style="font-size: 13px;">
-            <div class="invalid-feedback errorFoto" style="display: none;"></div>
-          </div>
-        </div>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-outline-success tombolSimpan">Simpan</button>
@@ -148,14 +141,6 @@
               $('.errorNama').fadeOut();
               $('#nama').removeClass('is-invalid');
               $('#nama').addClass('is-valid');
-            }
-            if (response.error.errorFoto) {
-              $('.errorFoto').html(response.error.errorFoto).show();
-              $('#foto').addClass('is-invalid');
-            } else {
-              $('.errorFoto').fadeOut();
-              $('#foto').removeClass('is-invalid');
-              $('#foto').addClass('is-valid');
             }
           } else {
             Swal.fire({

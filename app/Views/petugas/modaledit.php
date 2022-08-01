@@ -90,19 +90,6 @@
             <input type="text" class="form-control" id="kodepos" name="kodepos" value="<?= $kodepos; ?>">
           </div>
         </div>
-        <div class="form-group row">
-          <label for="foto" class="col-sm-4 col-form-label">Foto :</label>
-          <div class="col-sm-8">
-            <img src="<?= base_url($foto) ?>" alt="foto" width="50%">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="foto" class="col-sm-4 col-form-label">Ganti Foto :</label>
-          <div class="col-sm-8">
-            <input type="file" class="form-control" id="foto" name="foto" style="font-size: 13px;">
-            <div class="invalid-feedback errorFoto" style="display: none;"></div>
-          </div>
-        </div>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-outline-success tombolUpdate">Update</button>
@@ -154,14 +141,6 @@
               $('.errorNama').fadeOut();
               $('#nip').removeClass('is-invalid');
               $('#nip').addClass('is-valid');
-            }
-            if (response.error.errorFoto) {
-              $('.errorFoto').html(response.error.errorFoto).show();
-              $('#foto').addClass('is-invalid');
-            } else {
-              $('.errorFoto').fadeOut();
-              $('#foto').removeClass('is-invalid');
-              $('#foto').addClass('is-valid');
             }
           } else {
             Swal.fire({

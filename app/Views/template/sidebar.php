@@ -4,6 +4,54 @@
         <p class="text">Dashboard</p>
       </a>
     </li>
+    <?php if (session()->level_user == 'direktur') : ?>
+      <li class="nav-item">
+        <a href="#" class="nav-link bg-white">
+          <i class="nav-icon fas fa-file-alt"></i>
+          <p class="text">LAPORAN
+            <i class="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="<?= site_url('laporan/kejadian') ?>" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p class="text">Laporan kejadian</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('laporan/mobilPetugas') ?>" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p class="text">Laporan Mobil Petugas</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('laporan/mobilTerlibat') ?>" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p class="text">Laporan Mobil Terlibat</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('laporan/korbanKecelakaan') ?>" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p class="text">Laporan Korban Kecelakaan</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('laporan/bbmMobil') ?>" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p class="text">Laporan Pengisian BBM</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= site_url('laporan/laporanTerkait') ?>" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p class="text">Laporan Terkait kejadian</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+    <?php endif; ?>
     <?php if (session()->level_user == 'admin') : ?>
       <li class="nav-item">
         <a href="#" class="nav-link bg-success">

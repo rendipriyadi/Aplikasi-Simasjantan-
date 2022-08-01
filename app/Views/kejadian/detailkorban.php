@@ -44,7 +44,6 @@
         </tbody>
     </table>
 </div>
-<div class="viewmodal" style="display: none;"></div>
 
 <script>
     function hapus(id) {
@@ -93,7 +92,7 @@
             },
             dataType: "json",
             success: function(response) {
-                $('.viewmodal').html(response.data).show();
+                $('.datamodal').html(response.data).show();
                 $('#modaleditkorban').modal('show');
             },
             error: function(xhr, ajaxOptions, thrownError) {
