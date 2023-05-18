@@ -21,7 +21,7 @@
                                 <?php if ($row['id_pakai_mobil'] == $mobil) : ?>
                                     <option selected value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> || <?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?> || <?= $row['shift_mobil'] ?></option>
                                 <?php else : ?>
-                                    <option value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> - (<?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?>)</option>
+                                    <option value="<?= $row['id_pakai_mobil'] ?>"><?= $row['kode_mobil'] ?> - <?= $row['nama_mobil'] ?> || <?= date('d-m-Y', strtotime($row['tgl_pakai_mobil'])) ?> || <?= $row['shift_mobil'] ?></option>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         </select>

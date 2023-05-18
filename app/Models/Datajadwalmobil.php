@@ -35,13 +35,14 @@ class Datajadwalmobil extends Model
         $pt = $this->session->get('kode_pt');
 
         return $this->table('pemakaian_mobil')
-            ->select('tgl_pakai_mobil, shift_mobil, kode_mobil,nama_mobil,a.nama_pt as nama_pt1, b.nama_pt as nama_pt2, c.nama_pt as nama_pt3, d.nama_pt as nama_pt4,id_pakai_mobil')
+            ->select('tgl_pakai_mobil, shift_mobil,kode_mobil,nama_mobil,a.nama_pt as nama_pt1, b.nama_pt as nama_pt2, c.nama_pt as nama_pt3, d.nama_pt as nama_pt4,id_pakai_mobil')
             ->join('master_mobil', 'id_mobil = mobil_id')
             ->join('master_petugas as a', 'a.id_pt = pemakaian_mobil.id_pt1')
             ->join('master_petugas as b', 'b.id_pt = pemakaian_mobil.id_pt2')
             ->join('master_petugas as c', 'c.id_pt = pemakaian_mobil.id_pt3')
             ->join('master_petugas as d', 'd.id_pt = pemakaian_mobil.id_pt4')
             ->where('pemakaian_mobil.kode_pt', $pt)
+            ->orderBy('tgl_pakai_mobil', 'DESC')
             ->get();
     }
 
@@ -57,9 +58,10 @@ class Datajadwalmobil extends Model
             ->join('master_petugas as b', 'b.id_pt = pemakaian_mobil.id_pt2')
             ->join('master_petugas as c', 'c.id_pt = pemakaian_mobil.id_pt3')
             ->join('master_petugas as d', 'd.id_pt = pemakaian_mobil.id_pt4')
-            ->where('tgl_pakai_mobil >=', date('Y-m-d'))
-            ->where('tgl_pakai_mobil <=', date('Y-m-d', strtotime('-1 days')))
+            ->where('tgl_pakai_mobil <=', date('Y-m-d'))
+            ->where('tgl_pakai_mobil >=', date('Y-m-d', strtotime('-3 days')))
             ->where('pemakaian_mobil.kode_pt', $pt)
+            ->orderBy('tgl_pakai_mobil', 'DESC')
             ->get();
     }
 }
